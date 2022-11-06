@@ -56,8 +56,7 @@ export default function App() {
               <Route path='/repo' element = {<Repo />}></Route>
               
               <Route path="/Contact" element={<Contact authed={true} />} />
-              {/* <Route path="/AboutUs" element={<AboutUs authed={true} />} /> */}
-              <Route path="/*" element={<Page404 />} />
+              <Route path="/*" element={<Page404 />} /> 
             </Routes>
           </BrowserRouter>
         </HelmetProvider>
