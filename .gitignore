@@ -5,8 +5,7 @@
 /.pnp
 .pnp.js
 
-constants/
-src/constants.js
+constants.js
 
 
 # testing
