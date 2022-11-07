@@ -8,7 +8,7 @@ import Repo from './Components/About/About.js';
 import Page404 from './Components/Page404/Page404.js';
 import ErrorBoundary from './Components/ErrorBoundary/Error.js'
 import './index.css';
-import { myToken } from './constants.js';
+// import { myToken } from './constants.js';
 import { HelmetProvider } from 'react-helmet-async';
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
     try {
       const { data } = await axios.get("https://api.github.com/user", {
         headers: {
-          Authorization: `Bearer ${myToken}`
+          Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`
         }
       })
       setMyData(data)
@@ -44,6 +44,7 @@ export default function App() {
     fetchPosts();
   }, []);
 
+  console.log(process.env.REACT_APP_TOKEN)
   // console.log(posts)
   return (
     <div>

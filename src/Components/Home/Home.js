@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { myToken } from '../../constants';
+// import { myToken } from '../../constants';
 import SEO from '../../Components/SEO/SEO';
 import Card from '../Card';
 import '../Card/Card.css'
-import { Link, Outlet } from 'react-router-dom';
+import { Link,} from 'react-router-dom';
 import AboutUs from '../About/About'
 
 export default function Home(props) {
@@ -13,7 +13,7 @@ export default function Home(props) {
     try {
       const { data } = await axios.get("https://api.github.com/user/repos", {
         headers: {
-          Authorization: `Bearer ${myToken}`
+          Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`
         }
       })
       setRepos(data)
